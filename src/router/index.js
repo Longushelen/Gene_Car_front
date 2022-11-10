@@ -24,8 +24,16 @@ const routes = [
             "../views/main/MainView"
           ),
       },
+      {
+        path: "login",
+        component: () =>
+          import(
+            "../views/member/contact"
+          ),
+      },      
     ],
   },
+
   // {
   //   path: '/about',
   //   name: 'about',
@@ -41,4 +49,5 @@ const router = createRouter({
   routes
 })
 
+window.router = router;
 export default router
