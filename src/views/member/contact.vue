@@ -97,8 +97,13 @@ export default {
     },
     methods: {
         ...mapActions(["Login"]),
+        
         goLogin(){            
-            this.Login(this.mbrId, this.mbrPw);
+            const info = {
+                mbrId : this.mbrId,
+                mbrPw: this.mbrPw
+            };
+            this.Login(info);
         }
     },
 };
