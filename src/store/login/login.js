@@ -22,16 +22,13 @@ export default {
 
   actions: {
     /** 로그인한 현재 회원 정보 받아오기 */
-    async Login({ commit, state }) {
+    async Login({ commit, state }, param) {
       // store 로그인 정보 유지
       if (!state.loginInfo) {
         commit("setInfo", null);
       }
 
-      return axios({
-          method: "POST",
-          url: "/api/login",
-        })
+      return axios.post("/api/login", param)
         .then(({ data }) => {
           // commit("setLoginInfo", data);
           if(data){
