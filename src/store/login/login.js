@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export default {
   namespaced: true,
 
@@ -26,13 +28,16 @@ export default {
         commit("setInfo", null);
       }
 
-      return window.axios({
+      return axios({
           method: "POST",
-          url: "/login",
+          url: "/api/login",
         })
         .then(({ data }) => {
-          commit("setLoginInfo", data);
-          return data;
+          // commit("setLoginInfo", data);
+          if(data){
+            return console.log("로그인 성공");
+
+          }
         })  
         .catch(console.log("로그인 에러남"));
     },
