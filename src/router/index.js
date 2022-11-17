@@ -28,7 +28,7 @@ const routes = [
         path: "login",
         component: () =>
           import(
-            "../views/member/contact"
+            "../views/member/MemberLogin"
           ),
       },      
     ],
